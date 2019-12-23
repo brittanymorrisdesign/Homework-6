@@ -25,3 +25,20 @@ textarea{
   margin: 0 auto;
 }
 
+.col-md-8 {
+  height: 100%;
+  margin: 20px;
+}
+
+
+.card-deck {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  width: 800px;
+}
+
+.container-fluid2{
+  display: flex;
+
+}
