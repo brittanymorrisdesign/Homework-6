@@ -27,18 +27,20 @@ textarea{
 
 .col-md-8 {
   height: 100%;
-  margin: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
+  margin: 0 auto;
 }
-
 
 .card-deck {
-  text-align: center;
-  height: 100%;
-  display: flex;
-  width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
-.container-fluid2{
-  display: flex;
+#citySearch {
+  padding-top: 20px;
+}
+.col-sm-12 {
+  margin: 0 auto;
 
 }
