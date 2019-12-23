@@ -12,15 +12,16 @@ textarea{
   padding: 10px;
 }
 
-.jumbotron {
-  text-align: center;
-  background-color: #500FE4;
+.navbar-dark {
+  background-color: #160DC1 !important;
+  height: 85px;
   color: white;
-  border-radius: 0;
 }
 
-.description {
-  white-space: pre-wrap;
-  background-color:#F5F5F5;
+.display-4 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
 }
 
