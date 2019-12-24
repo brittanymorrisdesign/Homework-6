@@ -1,10 +1,9 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  line-height: 1;
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -12,8 +11,19 @@ textarea{
   padding: 10px;
 }
 
+body {
+  background-image: url("./images/Frostcopy.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 600px;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-position: top center !important;
+  background-size: cover;
+}
+
 .navbar-dark {
-  background-color: #160DC1 !important;
+  background-color: #004e92 !important;
   height: 85px;
   color: white;
 }
@@ -40,7 +50,16 @@ textarea{
 #citySearch {
   padding-top: 20px;
 }
+
 .col-sm-12 {
   margin: 0 auto;
+}
+#searchButton {
+ background-color: #1CB5E0;
+ color: white;
+}
+
+.text-center {
+
 
 }
