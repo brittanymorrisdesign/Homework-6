@@ -23,7 +23,7 @@ body {
 }
 
 .navbar-dark {
-  background-color: #004e92 !important;
+  background-color: #4682B4 !important;
   height: 85px;
   color: white;
 }
@@ -33,6 +33,7 @@ body {
   text-align: center;
   font-size: 30px;
   margin: 0 auto;
+  
 }
 
 .col-md-8 {
@@ -49,17 +50,27 @@ body {
 
 #citySearch {
   padding-top: 20px;
+  color: #00072d !important;
 }
 
 .col-sm-12 {
   margin: 0 auto;
+  background-color: #4682B4;
+  height: 240px;
 }
+
 #searchButton {
- background-color: #1CB5E0;
+ background-color: #67C8FF;
  color: white;
 }
 
 .text-center {
 
 
+}
+
+.card{
+  background-color: #00072d;
+  color: white;
+  border: .5px solid #4682B4;
 }
