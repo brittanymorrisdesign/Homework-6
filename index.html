@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic&display=swap" rel="stylesheet">
+    <link rel="icon" href="./Assets/images/favicon.png" type="image" sizes="16x16">
   <link rel="stylesheet" href="./Assets/style.css" />
   <title>Weather Dashboard</title>
 </head>
@@ -20,96 +21,101 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3" id="citySearch">
-      <div class="card" style="width: 18rem;">
+      <div class="card" id="locationOptions">
         <div class="card-header">
-          <form>
-            <input type="text" name="citySearchInput">
-            <button id="searchButton"><i class="fas fa-search"></i></button>
-          </form>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Austin</li>
-          <li class="list-group-item">Chicago</li>
-          <li class="list-group-item">New York</li>
-          <li class="list-group-item">Orlando</li>
-          <li class="list-group-item">San Francisco</li>
-          <li class="list-group-item">Seattle</li>
-          <li class="list-group-item">Denver</li>
-          <li class="list-group-item">Orlando</li>
-        </ul>
-      </div>
-    </div>
-<div class="col-md-8" id="currentLocation">
-  <div class="card text-center">
-    <div class="card-header">Atlanta, GA</div>
-    <div class="card-body">
-      <h1> Atlanta, GA </h1>
-      <h3> Temperature </h3>
-      <h3> Humidity </h3>
-      <h3> Wind Speed </h3>
-</div>
-</div>
-
-    <hr class="d-sm-none">
-    <div class="row-2">
-      <div class="col-sm-12" id="fiveDay">
-        <div class="card-deck">
-          <div class="card" id="fivedayCards">
-            <div class="card-body">
-              <h5 class="card-title">8/16/2019</h5>
-              <img src="./assets/images/js_icon.png" alt="JavaScript">
-              <p class="card-text">
-                Temp: <br>
-                Humidity: <br>
-              </p>
-            </div>
+          <div class="form-group">
+            <label for="inputdefault">Your Location</label>
+            <form class="example" action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            </form>
           </div>
-          <div class="card" id="fivedayCards">
-            <div class="card-body">
-              <h5 class="card-title">8/16/2019</h5>
-              <img src="./assets/images/js_icon.png" alt="JavaScript">
-              <p class="card-text">
-                Temp: <br>
-                Humidity: <br>
-              </p>
-            </div>
-          </div>
-          <div class="card" id="fivedayCards">
-            <div class="card-body">
-              <h5 class="card-title">8/16/2019</h5>
-              <img src="./assets/images/js_icon.png" alt="JavaScript">
-              <p class="card-text">
-                Temp: <br>
-                Humidity: <br>
-              </p>
-            </div>
-          </div>
-          <div class="card" id="fivedayCards">
-            <div class="card-body">
-              <h5 class="card-title">8/16/2019</h5>
-              <img src="./assets/images/js_icon.png" alt="JavaScript">
-              <p class="card-text">
-                Temp: <br>
-                Humidity: <br>
-              </p>
-            </div>
-          </div>
-          <div class="card" id="fivedayCards">
-            <div class="card-body">
-              <h5 class="card-title">8/16/2019</h5>
-              <img src="./assets/images/js_icon.png" alt="JavaScript">
-              <p class="card-text">
-                Temp: <br>
-                Humidity: <br>
-              </p>
-            </div>
+          <div class="span2">
+            <p><button class="btn btn-primary btn-block">Austin</button></p>
+            <p><button class="btn btn-primary btn-block">Chicago</button></p>
+            <p><button class="btn btn-primary btn-block">New York</button></p>
+            <p><button class="btn btn-primary btn-block">Orlando</button></p>
+            <p><button class="btn btn-primary btn-block">San Francisco</button></p>
+            <p><button class="btn btn-primary btn-block">Denver</button></p>
+            <p><button class="btn btn-primary btn-block">Orlando</button></p>
           </div>
         </div>
       </div>
+
     </div>
-  </div>
-</div>
-</div>
+
+
+
+      <div class="col-md-8" id="currentLocation">
+        <div class="card text-center">
+          <div class="card-header2">Atlanta, GA</div>
+          <div class="card-body">
+            <h1> Atlanta, GA </h1>
+            <h3> Temperature </h3>
+            <h3> Humidity </h3>
+            <h3> Wind Speed </h3>
+          </div>
+          <hr class="d-sm-none">
+          <div class="row-2">
+            <div class="col-sm-12" id="fiveDay">
+                <div class="card-header3">5 Day Forcast</div>
+              <div class="card-deck">
+                <div class="card" id="fivedayCards">
+                  <div class="card-body">
+                    <h5 class="card-title">8/16/2019</h5>
+                    <img src="./assets/images/js_icon.png" alt="JavaScript">
+                    <p class="card-text">
+                      Temp: <br>
+                      Humidity: <br>
+                    </p>
+                  </div>
+                </div>
+                <div class="card" id="fivedayCards">
+                  <div class="card-body">
+                    <h5 class="card-title">8/16/2019</h5>
+                    <img src="./assets/images/js_icon.png" alt="JavaScript">
+                    <p class="card-text">
+                      Temp: <br>
+                      Humidity: <br>
+                    </p>
+                  </div>
+                </div>
+                <div class="card" id="fivedayCards">
+                  <div class="card-body">
+                    <h5 class="card-title">8/16/2019</h5>
+                    <img src="./assets/images/js_icon.png" alt="JavaScript">
+                    <p class="card-text">
+                      Temp: <br>
+                      Humidity: <br>
+                    </p>
+                  </div>
+                </div>
+                <div class="card" id="fivedayCards">
+                  <div class="card-body">
+                    <h5 class="card-title">8/16/2019</h5>
+                    <img src="./assets/images/js_icon.png" alt="JavaScript">
+                    <p class="card-text">
+                      Temp: <br>
+                      Humidity: <br>
+                    </p>
+                  </div>
+                </div>
+                <div class="card" id="fivedayCards">
+                  <div class="card-body">
+                    <h5 class="card-title">8/16/2019</h5>
+                    <img src="./assets/images/js_icon.png" alt="JavaScript">
+                    <p class="card-text">
+                      Temp: <br>
+                      Humidity: <br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -119,10 +125,11 @@
 
 
 
-</div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="./Develop/script.js"></script>
-</body>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./Develop/script.js"></script>
+    </body>
 
 </html>
