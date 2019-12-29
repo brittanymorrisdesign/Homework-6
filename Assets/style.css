@@ -37,7 +37,7 @@ body {
 
 .card-deck {
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 #citySearch {
@@ -128,4 +128,22 @@ form.example::after {
 
 .card-header3 {
   padding-top: 10px;
+}
+
+h5 {
+color: white;
+text-align: center;
+font-size: 15px;
+}
+
+.fiveDayForecast {
+  padding-top: 15px;
+}
+
+.city {
+  padding-top: 20px;
+}
+
+.windSpeed {
+  padding-bottom: 20px;  
 }

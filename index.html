@@ -15,7 +15,7 @@
 </head>
 
 <nav class="navbar navbar-dark bg-dark">
-  <h1 class="display-4">Weather Dashboard</h1>
+  <h1 class="display-4"><img class="icon" src="./Assets/images/icon.png">Weather Dashboard</h1>
 </nav>
 
 <div class="container-fluid">
@@ -24,91 +24,81 @@
       <div class="card" id="locationOptions">
         <div class="card-header">
           <div class="form-group">
-            <label for="inputdefault">Your Location</label>
+            <label for="inputdefault">Search for a city: </label>
             <form class="example" action="/action_page.php">
               <input type="text" placeholder="Search.." name="search">
               <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             </form>
           </div>
+          <h5 class="popularSearches">Recent Searches:</h5>
+          &emsp;
           <div class="span2">
+              <h5 class="popularSearches">Popular Cities</h5>
             <p><button class="btn btn-primary btn-block">Austin</button></p>
             <p><button class="btn btn-primary btn-block">Chicago</button></p>
             <p><button class="btn btn-primary btn-block">New York</button></p>
             <p><button class="btn btn-primary btn-block">Orlando</button></p>
             <p><button class="btn btn-primary btn-block">San Francisco</button></p>
-            <p><button class="btn btn-primary btn-block">Denver</button></p>
-            <p><button class="btn btn-primary btn-block">Orlando</button></p>
+            <p><button class="btn btn-primary btn-block">Los Angeles</button></p>
           </div>
         </div>
       </div>
 
     </div>
 
-
-
       <div class="col-md-8" id="currentLocation">
         <div class="card text-center">
-          <div class="card-header2">Atlanta, GA</div>
-          <div class="card-body">
-            <h1> Atlanta, GA </h1>
-            <h3> Temperature </h3>
-            <h3> Humidity </h3>
-            <h3> Wind Speed </h3>
+          <div class="card-header2">Your Location</div>
+          <h1 class="city">City: </h1>
+          <img id="icon"></img>
+          <h3 class="temp">Temp: </h3>
+          <h3 class="humidity">Humidity: </h3>
+          <h3 class="windSpeed">Wind Speed: </h3>
           </div>
           <hr class="d-sm-none">
           <div class="row-2">
             <div class="col-sm-12" id="fiveDay">
-                <div class="card-header3">5 Day Forcast</div>
+                <h5 class="fiveDayForecast">5 Day Forecast </h5>
               <div class="card-deck">
                 <div class="card" id="fivedayCards">
                   <div class="card-body">
-                    <h5 class="card-title">8/16/2019</h5>
-                    <img src="./assets/images/js_icon.png" alt="JavaScript">
-                    <p class="card-text">
-                      Temp: <br>
-                      Humidity: <br>
-                    </p>
+                    <h5 class="date">00/00/000</h5>
+                    <img class="icon" src="">
+                    <p class="temperature">Temp: </p>
+                    <p class="humidity">Humidity: </p>
                   </div>
                 </div>
                 <div class="card" id="fivedayCards">
                   <div class="card-body">
-                    <h5 class="card-title">8/16/2019</h5>
-                    <img src="./assets/images/js_icon.png" alt="JavaScript">
-                    <p class="card-text">
-                      Temp: <br>
-                      Humidity: <br>
-                    </p>
+                      <h5 class="date">00/00/000</h5>
+                      <img class="icon" src="">
+                      <p class="temperature">Temp: </p>
+                      <p class="humidity">Humidity: </p>
                   </div>
                 </div>
                 <div class="card" id="fivedayCards">
                   <div class="card-body">
-                    <h5 class="card-title">8/16/2019</h5>
-                    <img src="./assets/images/js_icon.png" alt="JavaScript">
-                    <p class="card-text">
-                      Temp: <br>
-                      Humidity: <br>
-                    </p>
+                      <h5 class="date">00/00/000</h5>
+                      <img class="icon" src="">
+                      <p class="temperature">Temp: </p>
+                      <p class="humidity">Humidity: </p>
                   </div>
                 </div>
                 <div class="card" id="fivedayCards">
                   <div class="card-body">
-                    <h5 class="card-title">8/16/2019</h5>
-                    <img src="./assets/images/js_icon.png" alt="JavaScript">
-                    <p class="card-text">
-                      Temp: <br>
-                      Humidity: <br>
-                    </p>
+                      <h5 class="date">00/00/000</h5>
+                      <img class="icon" src="">
+                      <p class="temperature">Temp: </p>
+                      <p class="humidity">Humidity: </p>
                   </div>
                 </div>
                 <div class="card" id="fivedayCards">
                   <div class="card-body">
-                    <h5 class="card-title">8/16/2019</h5>
-                    <img src="./assets/images/js_icon.png" alt="JavaScript">
-                    <p class="card-text">
-                      Temp: <br>
-                      Humidity: <br>
-                    </p>
+                      <h5 class="date">00/00/000</h5>
+                      <img class="icon" src="">
+                      <p class="temperature">Temp: </p>
+                      <p class="humidity">Humidity:</p>
                   </div>
                 </div>
               </div>
