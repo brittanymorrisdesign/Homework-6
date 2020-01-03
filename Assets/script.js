@@ -5,24 +5,23 @@ $(document).ready(function () {
       var searchHistoryList = document.querySelector("#searchHistoryList");
       var searchedCities = [];
 
-
-//use moment to display date in a normal format 
+//Moment.js to display date
 var currentDay = moment().format('MMMM Do, YYYY');
     $('#currentDay').text(currentDay);
 
-var dayTwo = moment().subtract(10, 'days').calendar();
+var dayTwo = moment().add(1, 'days').format('l'); 
     $('#dayTwo').text(dayTwo.slice(0,8));
 
-var dayThree = moment().subtract(10, 'days').calendar();
+var dayThree = moment().add(2, 'days').format('l'); 
     $('#dayThree').text(dayThree.slice(0,8));
 
-var dayFour = moment().subtract(10, 'days').calendar();
+var dayFour = moment().add(3, 'days').format('l'); 
     $('#dayFour').text(dayFour.slice(0,8));
 
-var dayFive = moment().subtract(10, 'days').calendar();
+var dayFive = moment().add(4, 'days').format('l'); 
     $('#dayFive').text(dayFive.slice(0,8));
 
-var daySix = moment().subtract(10, 'days').calendar();
+var daySix = moment().add(5, 'days').format('l'); 
     $('#daySix').text(daySix.slice(0,8)); 
 
 
