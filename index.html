@@ -10,6 +10,7 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Metrophobic&display=swap" rel="stylesheet">
   <link rel="icon" href="./Assets/images/favicon.png" type="image" sizes="16x16">
+  <link rel="stylesheet" type="text/css" href="https://erikflowers.github.io/weather-icons/css/weather-icons.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./Assets/style.css" />
   <title>Weather Dashboard</title>
@@ -49,8 +50,8 @@
 
     <div class="col-md-8" id="currentLocation">
       <div class="card text-center" id="currentWeather">
-        <div class="card-header2">Your Location</div>
-        <h4 class="city">City: </h4>
+        <div class="card-header2" id="currentDay"></div>
+        <h4 class="city"id="city">City: </h4>
         <img id="icon"></img>
         <h4 class="temp">Temp: </h4>
         <h4 class="humidity">Humidity: </h4>
@@ -64,7 +65,7 @@
           <div class="card-deck">
             <div class="card" id="fivedayCards">
               <div class="card-body">
-                <h5 class="date">00/00/000</h5>
+                <h5 id="dayTwo"></h5>
                 <img class="icon" src="">
                 <p class="temperature">Temp: </p>
                 <p class="humidity">Humidity: </p>
@@ -72,7 +73,7 @@
             </div>
             <div class="card" id="fivedayCards">
               <div class="card-body">
-                <h5 class="date">00/00/000</h5>
+                <h5 id="dayThree"></h5>
                 <img class="icon" src="">
                 <p class="temperature">Temp: </p>
                 <p class="humidity">Humidity: </p>
@@ -80,7 +81,7 @@
             </div>
             <div class="card" id="fivedayCards">
               <div class="card-body">
-                <h5 class="date">00/00/000</h5>
+                <h5 id="dayFour"></h5>
                 <img class="icon" src="">
                 <p class="temperature">Temp: </p>
                 <p class="humidity">Humidity: </p>
@@ -88,7 +89,7 @@
             </div>
             <div class="card" id="fivedayCards">
               <div class="card-body">
-                <h5 class="date">00/00/000</h5>
+                <h5 id="dayFive"></h5>
                 <img class="icon" src="">
                 <p class="temperature">Temp: </p>
                 <p class="humidity">Humidity: </p>
@@ -96,7 +97,7 @@
             </div>
             <div class="card" id="fivedayCards">
               <div class="card-body">
-                <h5 class="date">00/00/000</h5>
+                <h5 id="daySix"></h5>>
                 <img class="icon" src="">
                 <p class="temperature">Temp: </p>
                 <p class="humidity">Humidity:</p>
@@ -109,6 +110,7 @@
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./Assets/script.js"></script>
 </body>
 </html>
