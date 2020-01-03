@@ -25,7 +25,6 @@ body {
   text-align: center;
   font-size: 30px;
   margin: 0 auto;
-  
 }
 
 .col-md-8 {
@@ -98,6 +97,7 @@ form.example button {
   float: left;
   width: 20%;
   padding: 10px;
+  margin: 0px; !important;
   background: #4682B4;
   border: none;
   color: #00072d;
@@ -147,3 +147,16 @@ font-size: 15px;
 .uvIndex {
   padding-bottom: 20px;  
 }
+
+button {
+border: none;
+background: #4682B4;
+color: white;
+margin: 1px;
+}
+
+.button:focus, .button:active {
+  outline: none;
+  box-shadow: none;
+}
+
