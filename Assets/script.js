@@ -1,9 +1,7 @@
 $(document).ready(function () {
-
-      var apiKey = "06606e544a946ac567964601f7ed0813";
-      var cityName = "";
-      var searchHistoryList = document.querySelector("#searchHistoryList");
-      var searchedCities = [];
+    var cityName = "";
+    var searchHistoryList = document.querySelector("#searchHistoryList");
+    var searchedCities = [];
 
 //Moment.js to display date
 var currentDay = moment().format('MMMM Do, YYYY');
@@ -23,13 +21,6 @@ var dayFive = moment().add(4, 'days').format('l');
 
 var daySix = moment().add(5, 'days').format('l'); 
     $('#daySix').text(daySix.slice(0,8)); 
-
-
-
-
-
-
-
 
       init();
 
@@ -71,18 +62,28 @@ var daySix = moment().add(5, 'days').format('l');
         localStorage.setItem("searchedCities", JSON.stringify(searchedCities));
       }
 
-      // When form is submitted...
+      // When form is submitted (API Request)
       $("#searchBtn").on("click", function (event) {
         event.preventDefault();
 
-        cityName = $("#cityNameSearch").val().trim();
+        let cityName = $("#cityNameSearch").val().trim();
         cityName = cityName.charAt(0).toUpperCase() + cityName.slice(1); //First letter of char capitalized
+        currentWeather(cityName);
+        
+        $("#searchHistoryList").on("click", function (event) {
+          event.preventDefault();
+
+          let cityName = $(this).text();
+          currentWeather(cityName);
+
 
         // Return from function early if submitted cityNameSearchText is blank
-        if (cityName === "") {
-          return;
-          currentWeather(city);
-        };
+      
+        if (cityName !== null) {
+        city = cityName[0].name;
+    
+};
+        });
 
         // Add new cityNameSearchText to searchedCities array, clear the input
         searchedCities.push(cityName);
@@ -93,29 +94,58 @@ var daySix = moment().add(5, 'days').format('l');
         rendersearchedCities();
       });
 
-      // Display Current Weather
-      function currentWeather(city) {
-        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + APIKey;
+    
 
-        var longtitude;
-        var latitude;
-        var citynamedisplay;
-        var iconcode;
+
+
+
+      
+      })
+      // Display Current Weather
+
+      
+      function currentWeather(cityName) {
+        apiKey = `06606e544a946ac567964601f7ed0813`;
+        var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${apiKey}`;
+       // var fiveDayQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial&appid=${apiKey}`;
+        //var longtitude;
+        //var latitude;
+       // var citynamedisplay;
+      
 
         $.ajax({
           url: queryURL,
           method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
+
           var iconCode = response.weather[0].icon;
           var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-          $("#city").html(response.name);
-      
-          $("#description").text("Currently: " + response.weather[0].description);
-          
-          $(".temp").html(response.main.temp + " °F");
-          $(".humidity").html(response.main.humidity + " %");
-          $(".windspeed").html(response.wind.speed + " MPH");
-          $("#icon").attr("src", iconURL);
-        })
-      }
-    });
+
+
+         var city = response.name;
+         var cityIcon = response.weather[0].icon;
+         var temp = Math.round(response.main.temp);
+         var humidity = response.main.humidity;
+         var windSpeed = response.wind.speed;
+         var weatherIcon = $("<img>").attr("src", `https://openweathermap.org/img/w/${cityIcon}.png`)
+         console.log(response)
+          $("#city").text(city);
+          $("#temp").text("Temperature: " + temp + String.fromCharCode(176) + "F"); //degree sign
+          $("#humidity").text("Humidity: " + humidity + " %");
+          $("#windSpeed").text("Wind Speed: " + windSpeed + " MPH");
+          $("#weatherIcon").attr("src", iconURL);
+        });
+    }
+
+      // Uv Index
+ // $.ajax({
+  //  url: 'https://api.openweathermap.org/data/2.5/uvi?' + 
+  //  "APPID=48bc438037e2bdcc406efdc80b46134e" + 
+  //  "&lat=" + response.coord.lat + 
+ //   "&lon=" + response.coord.lon,
+  //  method: "GET" 
+//  }).then(function(response) {
+ //  var uvIndex = response.value;
+ //   $(".uvIndex).text(uvIndex);
+ // }
+     //   })
