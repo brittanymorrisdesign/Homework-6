@@ -139,15 +139,15 @@ $(document).on("click", "newCity", function () {
 });
 
 // Weather Icons
-function weatherIcons(response) {
+//function weatherIcons(response) {
   //Variable storing the weather icon link
-  var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-  $("#weatherIcon").attr("style", "display: block;");
-  var weatherIcon = $("#weatherIcon");
-  weatherIcon.attr("src", iconurl);
-  weatherIcon.attr("height", "60px");
-  weatherIcon.attr("style", "padding-bottom:12px");
-}
+//  var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+ // $("#weatherIcon").attr("style", "display: block;");
+ // var weatherIcon = $("#weatherIcon");
+  //weatherIcon.attr("src", iconurl);
+ // weatherIcon.attr("height", "60px");
+ // weatherIcon.attr("style", "padding-bottom:12px");
+//}
 
 
 // Display Current Weather
@@ -183,20 +183,20 @@ function currentWeather(cityName) {
     $("#weatherIcon").attr("src", iconURL);
 
   // Uv Index
-  $.ajax({
-    url: indexQueryURL,
-     method: "GET" 
-   }).then(function(response) {
+ // $.ajax({
+   // url: indexQueryURL,
+ //    method: "GET" 
+ //  }).then(function(response) {
 
-  })
-})
+//  })
+//})
 
 // 5 Day Forecast
 $.ajax({
   url: fiveDayQueryURL,
   method: "GET" 
 }).then(function(response) {
-  weatherIcons(response);
+ // weatherIcons(response);
   //Day 1
   var iconCode = response.list[0].weather[0].icon;
   var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
@@ -232,5 +232,6 @@ $.ajax({
   $("#iconSix").attr("src", iconURL);
   $("#humidSix").text("Humidity: " + response.list[32].main.humidity + "%");
 })
-  }
+  })
+}
 });
