@@ -53,7 +53,6 @@ $(document).ready(function () {
     currentWeather($(this).text());
   });
 
-
    // Click Popular Cities
    $(document).on("click", "#austin", function () {
     var popularCities = "https://api.openweathermap.org/data/2.5/weather?q=" + "#austin" + "&units=imperial&appid=" + apiKey;
@@ -135,23 +134,29 @@ $(document).ready(function () {
 
 
 // Click on previous city button
-
 $(document).on("click", "newCity", function () {
   currentWeather($(this).text());
 });
 
-
+// Weather Icons
+function weatherIcons(response) {
+  //Variable storing the weather icon link
+  var iconurl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+  $("#weatherIcon").attr("style", "display: block;");
+  var weatherIcon = $("#weatherIcon");
+  weatherIcon.attr("src", iconurl);
+  weatherIcon.attr("height", "60px");
+  weatherIcon.attr("style", "padding-bottom:12px");
+}
 
 
 // Display Current Weather
-
 function currentWeather(cityName) {
 
   apiKey = "06606e544a946ac567964601f7ed0813";
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + apiKey;
   //var indexQueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
   var fiveDayQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=" + apiKey;
-
   
   $.ajax({
     url: queryURL,
@@ -166,15 +171,13 @@ function currentWeather(cityName) {
     var temp = Math.round(response.main.temp);
     var humidity = response.main.humidity;
     var windSpeed = response.wind.speed;
-  //  var lat = response.coord.lat;
-  //  var lon = response.coord.lon;
-   
-
+    var lat = response.coord.lat;
+    var lon = response.coord.lon;
     var weatherIcon = $("<img>").attr("src", `https://openweathermap.org/img/w/${cityIcon}.png`)
     //console.log(response)
 
     $("#city").text(city);
-    $("#temp").text("Temperature: " + temp + String.fromCharCode(176) + "F"); //degree sign
+    $("#temp").text("Temperature: " + temp + "° F"); //degree sign
     $("#humidity").text("Humidity: " + humidity + " %");
     $("#windSpeed").text("Wind Speed: " + windSpeed + " MPH");
     $("#weatherIcon").attr("src", iconURL);
@@ -185,7 +188,7 @@ function currentWeather(cityName) {
      method: "GET" 
    }).then(function(response) {
 
-})
+  })
 })
 
 // 5 Day Forecast
@@ -193,7 +196,7 @@ $.ajax({
   url: fiveDayQueryURL,
   method: "GET" 
 }).then(function(response) {
-
+  weatherIcons(response);
   //Day 1
   var iconCode = response.list[0].weather[0].icon;
   var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
@@ -220,7 +223,7 @@ $.ajax({
   var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
   $("#tempFive").text("Temp: " + parseInt(response.list[24].main.temp) + "° F");
   $("#iconFive").attr("src", iconURL);
-  $("#humidityFive").text("Humidity: " + response.list[24].main.humidity + "%");
+  $("#humidFive").text("Humidity: " + response.list[24].main.humidity + "%");
 
   //Day 5
   var iconCode = response.list[32].weather[0].icon;
