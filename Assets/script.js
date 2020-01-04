@@ -48,10 +48,41 @@ $(document).ready(function () {
     }
   };
   
- //Click Searched Cities
+ // Click Searched Cities
   $(document).on("click", ".newCityBtn", function () {
     currentWeather($(this).text());
   });
+
+
+   // Click Popular Cities
+   $(document).on("click", "#austin", function () {
+    var popularCities = "https://api.openweathermap.org/data/2.5/weather?q=" + "#austin" + "&units=imperial&appid=" + apiKey;
+    
+    $.ajax({
+      url: popularCities,
+      method: "GET"
+    }).then(function (response) {
+  
+      var iconCode = response.weather[0].icon;
+      var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+  
+      var city = response.name;
+      var cityIcon = response.weather[0].icon;
+      var temp = Math.round(response.main.temp);
+      var humidity = response.main.humidity;
+      var windSpeed = response.wind.speed;
+   
+      $("#city").text(city);
+      $("#temp").text("Temperature: " + temp + String.fromCharCode(176) + "F"); //degree sign
+      $("#humidity").text("Humidity: " + humidity + " %");
+      $("#windSpeed").text("Wind Speed: " + windSpeed + " MPH");
+      $("#weatherIcon").attr("src", iconURL);
+    });
+
+    currentWeather(cityName);
+    searchedCities = [];
+
+ });  
 
   function init() {
     // Get stored searchedCities from localStorage
@@ -117,10 +148,9 @@ $(document).on("click", "newCity", function () {
 function currentWeather(cityName) {
 
   apiKey = "06606e544a946ac567964601f7ed0813";
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName +
-  "&units=imperial&appid=" + apiKey;
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + apiKey;
   //var indexQueryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
-  //var fiveDayQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=imperial&appid=${apiKey}`;
+  var fiveDayQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=" + apiKey;
 
   
   $.ajax({
@@ -155,12 +185,49 @@ function currentWeather(cityName) {
      method: "GET" 
    }).then(function(response) {
 
-    var uvIndex =  response.value;
-    var uvIndexDisplay = $("#uvIndex");  
-    vIndexDisplay.text(uvIndex); 
-    uvIndex= parseFloat(uvIndex); 
+})
+})
 
-  })
+// 5 Day Forecast
+$.ajax({
+  url: fiveDayQueryURL,
+  method: "GET" 
+}).then(function(response) {
+
+  //Day 1
+  var iconCode = response.list[0].weather[0].icon;
+  var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+  $("#tempTwo").text("Temp: " + parseInt(response.list[0].main.temp) + "° F");
+  $("#iconTwo").attr("src", iconURL);
+  $("#humidTwo").text("Humidity: " + response.list[0].main.humidity + "%");
+
+  //Day 2
+  var iconCode = response.list[8].weather[0].icon;
+  var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+  $("#tempThree").text("Temp: " + parseInt(response.list[8].main.temp) + "° F");
+  $("#iconThree").attr("src", iconURL);
+  $("#humidThree").text("Humidity: " + response.list[8].main.humidity + "%");
+ 
+  //Day 3
+  var iconCode = response.list[16].weather[0].icon;
+  var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+  $("#tempFour").text("Temp: " + parseInt(response.list[16].main.temp) + "° F");
+  $("#iconFour").attr("src", iconURL);
+  $("#humidFour").text("Humidity: " + response.list[16].main.humidity + "%");
+
+  //Day 4
+  var iconCode = response.list[24].weather[0].icon;
+  var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+  $("#tempFive").text("Temp: " + parseInt(response.list[24].main.temp) + "° F");
+  $("#iconFive").attr("src", iconURL);
+  $("#humidityFive").text("Humidity: " + response.list[24].main.humidity + "%");
+
+  //Day 5
+  var iconCode = response.list[32].weather[0].icon;
+  var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+  $("#tempSix").text("Temp: " + parseInt(response.list[32].main.temp) + "° F");
+  $("#iconSix").attr("src", iconURL);
+  $("#humidSix").text("Humidity: " + response.list[32].main.humidity + "%");
 })
-}
-})
+  }
+});
