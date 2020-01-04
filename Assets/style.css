@@ -160,3 +160,8 @@ margin: 1px;
   box-shadow: none;
 }
 
+#weatherIcon {
+  width: 100px;
+  margin: 0 auto;
+}
+
