@@ -165,3 +165,37 @@ margin: 1px;
   margin: 0 auto;
 }
 
+.temp {
+margin: 0 auto;
+text-align: center;
+}
+
+.humid {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#weatherIconTwo {
+  width: 100%;
+  height: auto;
+}
+
+#weatherIconThree {
+  width: 100%;
+  height: auto;
+}
+
+#weatherIconFour {
+  width: 100%;
+  height: auto;
+}
+
+#weatherIconFive {
+  width: 100%;
+  height: auto;
+}
+
+#weatherIconSix {
+  width: 100%;
+  height: auto;
+}
