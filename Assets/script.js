@@ -48,33 +48,6 @@ $(document).ready(function () {
     currentWeather($(this).text());
   });
 
-  // Click Popular Cities
-  $(document).on("click", function () {
-    var popularCities = "https://api.openweathermap.org/data/2.5/weather?q=" + "#austin" + "&units=imperial&appid=" + apiKey;
-    
-    $.ajax({
-      url: popularCities,
-      method: "GET"
-    }).then(function (response) {
-  
-    var iconCode = response.weather[0].icon;
-    var iconURL = "https://openweathermap.org/img/wn/" + iconCode + "@2x.png";
-    var city = response.name;
-    var temp = Math.round(response.main.temp);
-    var humidity = response.main.humidity;
-    var windSpeed = response.wind.speed;
-   
-    $("#city").text(city);
-    $("#temp").text("Temperature: " + temp + String.fromCharCode(176) + "F"); 
-    $("#humidity").text("Humidity: " + humidity + " %");
-    $("#windSpeed").text("Wind Speed: " + windSpeed + " MPH");
-    $("#weatherIcon").attr("src", iconURL);
-    });
-
-    currentWeather(cityName);
-    searchedCities = [];
- });  
-
   function init() {
   // Get stored searchedCities from localStorage
   // Parsing the JSON string to an object
