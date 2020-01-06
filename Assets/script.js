@@ -49,7 +49,7 @@ $(document).ready(function () {
   });
 
   // Click Popular Cities
-  $(document).on("click", "#austin", function () {
+  $(document).on("click", function () {
     var popularCities = "https://api.openweathermap.org/data/2.5/weather?q=" + "#austin" + "&units=imperial&appid=" + apiKey;
     
     $.ajax({
