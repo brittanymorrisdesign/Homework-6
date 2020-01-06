@@ -15,4 +15,4 @@ so that I can plan a trip accordingly
 ```
 Built With: HTML5, CSS3, Bootstrap, Javascript, jQuery, Server-side APIs
 
-<img width="1384" alt="Screen Shot 2019-12-29 at 5 20 35 PM" src="https://user-images.githubusercontent.com/44029053/71647787-5091c300-2cc9-11ea-9352-abc724932b24.png">
+<img width="1397" alt="weathericon_app" src="https://user-images.githubusercontent.com/44029053/71788380-9fa06680-2fef-11ea-8569-daf6fa4e3be1.png">
